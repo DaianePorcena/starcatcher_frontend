@@ -9,9 +9,14 @@ import LoginImage from "../../assets/images/login.png";
 // hooks
 import { useRef } from "react";
 import usePasswordVisibilityToggle from "../../hooks/usePasswordVisibilityToggle";
+import useTypeWriterEffect from "../../hooks/useTypeWriterEffect";
 
 const Login = () => {
   const passwordInputRef = useRef(null);
+  const titleRef = useTypeWriterEffect(
+    "<Acessar o Starcatcher Portfólio!>",
+    100
+  );
   const {
     isPasswordVisible,
     togglePasswordVisibility,
@@ -25,7 +30,7 @@ const Login = () => {
         <img src={LoginImage} alt="Astronauta Starcatcher" />
       </div>
       <div className={styles.form_container}>
-        <h1>&lt;Acessar o Starcatcher Portfólio!&gt;</h1>
+        <h1 ref={titleRef}></h1>
 
         <form>
           <label>
