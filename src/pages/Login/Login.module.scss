@@ -1,0 +1,21 @@
+@use '../../assets/styles/abstract/variables';
+@use '../../assets/styles/index.scss';
+
+.link{
+  display: flex;
+  height: 50px;
+  margin-top: 15px;
+  margin-right: auto;
+  a{
+    color: variables.$color-neutral-110;
+    font-size: 1rem;
+    text-decoration: none;
+    
+    transition: .3s;
+    &:hover{
+      color: variables.$color-quaternary;
+      text-decoration: underline;
+      
+    }
+  }
+}
