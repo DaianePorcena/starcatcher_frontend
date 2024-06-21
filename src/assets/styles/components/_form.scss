@@ -1,5 +1,5 @@
-@import "../abstract/variables";
-@import "../abstract/mixins";
+@use "../abstract/variables";
+@use "../abstract/mixins";
 
 .container{
   display: flex;
@@ -27,7 +27,7 @@
 
     h1{
       font-size: 2em;
-      color: $color-primary;
+      color: variables.$color-primary;
       margin-bottom: 60px;
     }
 
@@ -42,21 +42,21 @@
         @extend form;
         align-items: baseline;
         font-size: .75rem;
-        color: $color-neutral-110;
+        color: variables.$color-neutral-110;
         gap: 8px;
 
         input{
           width: 100%;
           padding: 10px;
-          border: 1px solid $color-neutral-110;
+          border: 1px solid variables.$color-neutral-110;
           border-radius: 5px;
           font-size: 1rem;
-          color: $color-neutral-120;
+          color: variables.$color-neutral-120;
           &::placeholder{
             font-size: .85rem;
           }
           &:focus{
-            outline: 2px solid $color-quaternary;
+            outline: 2px solid variables.$color-quaternary;
             border: transparent;
           }
 
@@ -65,7 +65,7 @@
         .btn_show{
           background: transparent;
           border: none;
-          color: $color-neutral-120;
+          color: variables.$color-neutral-120;
           position: absolute;
           top: 70%;
           right: 10px;
@@ -74,10 +74,7 @@
         }
       }
       .login{
-        @include button-styles($color-primary, $color-tertiary)
-      }
-      .register{
-        @include button-styles($color-primary, $color-tertiary)
+        @include mixins.button-styles(variables.$color-primary, variables.$color-tertiary)
       }
     }
   }
