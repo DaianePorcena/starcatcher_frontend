@@ -1,0 +1,9 @@
+@use '../../assets/styles/abstract/variables';
+@use '../../assets/styles/index.scss';
+
+.fieldset_name{
+  display: flex;
+  gap: 15px;
+  padding: 0;
+  border: none;
+}
