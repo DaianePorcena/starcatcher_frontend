@@ -76,6 +76,9 @@
       .login{
         @include mixins.button-styles(variables.$color-primary, variables.$color-tertiary)
       }
+      .register{
+        @include mixins.button-styles(variables.$color-primary, variables.$color-tertiary)
+      }
     }
   }
 }
