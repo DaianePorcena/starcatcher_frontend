@@ -10,6 +10,8 @@ const useTypeWriterEffect = (text, delay) => {
       return;
     }
 
+    element.innerHTML = "";
+
     const charArray = text.split("").reverse();
     const typer = setInterval(() => {
       if (!charArray.length) {
