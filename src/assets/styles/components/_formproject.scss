@@ -1,0 +1,93 @@
+@use "../abstract/variables";
+@use "../abstract/mixins";
+
+.container_form{
+  width: 100vw; // Ajuste para 100vw para cobrir a largura total da viewport
+  height: 100vh; // Altura para cobrir a altura total da viewport
+  position: fixed; // Mudança de absolute para fixed
+  top: 0;
+  left: 0;
+  z-index: 100; // Garante que o formulário fique acima de outros elementos
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  div{
+    width: 50%;
+    padding: 14px 32px;
+    background: #fff;
+
+    .close{
+      position: absolute;
+      right: 356px;
+      top: 100px;
+      font-size: 1.5rem;
+      color: variables.$color-neutral-110;
+      cursor: pointer;
+    }
+
+    h2{
+      font-size: 2rem;
+      font-weight: 400;
+      color: variables.$color-neutral-110;
+    }
+
+    form{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      input, textarea{
+        width: 100%;
+        padding: 10px;
+        border: 1px solid rgba(0, 0, 0, 0.4);
+        border-radius: 5px;
+        font-size: 1rem;
+        color: variables.$color-neutral-120;
+
+        &::placeholder{
+          font-size: .85rem;
+        }
+        &:focus{
+          outline: 2px solid variables.$color-quaternary;
+          border: transparent;
+        }
+      }
+    }
+
+    .buttons{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      gap: 20px;
+
+      a{
+        color: variables.$color-neutral-110;
+        font-size: 1rem;
+        text-decoration: none;
+        
+        transition: .3s;
+        &:hover{
+          color: variables.$color-quaternary;
+          text-decoration: underline;
+          
+        }
+      }
+
+      .save{
+        @include mixins.button-styles(variables.$color-primary, #4c9904);
+        width: 100px
+      }
+
+      .cancel{
+        @include mixins.button-styles(variables.$color-neutral-120, #ff0000);
+        width: 130px
+      }
+    }
+  }
+}
