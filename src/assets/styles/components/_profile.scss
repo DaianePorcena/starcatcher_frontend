@@ -1,0 +1,21 @@
+@use "../abstract/variables";
+@use "../abstract/mixins";
+
+.profile{
+  width: 364px;
+  text-align: center;
+  margin-bottom: 90px;
+
+  h2{
+    margin: 0;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    color: variables.$color-neutral-120;
+  }
+
+  button{
+    @include mixins.button-styles(variables.$color-tertiary, variables.$color-quaternary);
+    width: 100%;
+    font-weight: bold;
+  }
+}

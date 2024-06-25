@@ -1,0 +1,28 @@
+@use "../abstract/variables";
+@use "../abstract/mixins";
+
+
+.card_add_project {
+  width: 389px;
+  height: 258px;
+  background-color: #E6E9F2;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  
+  button{
+    border: none;
+    background: transparent;
+    color: variables.$color-neutral-120;
+    font-size: 1rem;
+    cursor: pointer;
+
+    i{
+      font-size: 2rem;
+      color: variables.$color-neutral-120;
+    }
+  }
+}
